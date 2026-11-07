@@ -11,26 +11,36 @@
     gap: var(--spacing-100);
     flex-direction: column;
 
-    height: fit-content;
-
     border-radius: var(--spacing-200);
 
     overflow: hidden;
-
+ 
     @media (min-width: $breakpoint-tablet) {
         grid-column: span 3;
         grid-row: span 1;
     }
-    
-    
-    &__info{
-        background: var(--color-purple-600);
-        padding: var(--spacing-400);
-        border-radius: var(--spacing-200);
 
+    @media (min-width: $breakpoint-desktop) {        
+        grid-column: span 1;
+        grid-row: span 2;
+    }
+    
+    
+    &__info{ 
+        background: var(--color-purple-600);
+        border-radius: var(--spacing-200);
+        
         display: flex;
         align-items: center;
-        gap: var(--spacing-300); 
+        gap: var(--spacing-300);  
+        padding: var(--spacing-400);
+
+        @media (min-width: $breakpoint-desktop) {
+            flex-direction: column;
+            gap: 40px;
+            align-items: start;
+            justify-content: center;
+        }
     }
 
     &__avatar{
@@ -54,13 +64,26 @@
     &__name{
         @include text-preset(4);
         color: var(--color-white);
+
+        @media (min-width: $breakpoint-desktop) {
+            @include text-preset(2);
+        }
     }
 
     .filter-time{
         display: flex;
         justify-content: space-around;
-        padding: var(--spacing-300) 0 ;
+        padding: var(--spacing-300) 0 ; 
 
+        @media (min-width: $breakpoint-desktop) {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: start;
+            height: 100%;
+            padding-left: var(--spacing-400);
+        }
+        
         &__button{
             color: var(--color-purple-500);
             

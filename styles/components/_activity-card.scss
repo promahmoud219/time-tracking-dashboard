@@ -9,8 +9,8 @@
     border-radius: var(--spacing-200);
     isolation: isolate;
     position: relative;
- 
-
+    height: fit-content;
+    
     &__header{
         
         height: 36px; 
@@ -55,11 +55,20 @@
         color: var(--color-white);
         @include text-preset(5-medium);
     }
-    
-    &__options{
-        color: var(--color-navy-200);
+ 
+    &__options {
+
+        &:active,
+        &:hover,
+        &:focus-visible{
+            
+            img{
+                filter: brightness(0%) invert(1);
+                
+            }
+        }
     }
-    
+
     &__time{
         display: flex;
         justify-content: space-between;

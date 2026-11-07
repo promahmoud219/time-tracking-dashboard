@@ -137,12 +137,56 @@ body {
     -ms-grid-column: 3;
   }
 }
+@media (min-width: 90rem) {
+  .time-tracking-dashboard {
+    -ms-grid-columns: 255px var(--spacing-400) 255px var(--spacing-400) 255px var(--spacing-400) 255px;
+    grid-template-columns: repeat(4, 255px);
+    -ms-grid-rows: 1fr var(--spacing-400) 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: var(--spacing-400);
+  }
+  .time-tracking-dashboard > *:nth-child(1) {
+    -ms-grid-row: 1;
+    -ms-grid-column: 1;
+  }
+  .time-tracking-dashboard > *:nth-child(2) {
+    -ms-grid-row: 1;
+    -ms-grid-column: 3;
+  }
+  .time-tracking-dashboard > *:nth-child(3) {
+    -ms-grid-row: 1;
+    -ms-grid-column: 5;
+  }
+  .time-tracking-dashboard > *:nth-child(4) {
+    -ms-grid-row: 1;
+    -ms-grid-column: 7;
+  }
+  .time-tracking-dashboard > *:nth-child(5) {
+    -ms-grid-row: 3;
+    -ms-grid-column: 1;
+  }
+  .time-tracking-dashboard > *:nth-child(6) {
+    -ms-grid-row: 3;
+    -ms-grid-column: 3;
+  }
+  .time-tracking-dashboard > *:nth-child(7) {
+    -ms-grid-row: 3;
+    -ms-grid-column: 5;
+  }
+  .time-tracking-dashboard > *:nth-child(8) {
+    -ms-grid-row: 3;
+    -ms-grid-column: 7;
+  }
+}
 
 .activity-card {
   background: var(--color-blue-300);
   border-radius: var(--spacing-200);
   isolation: isolate;
   position: relative;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
 }
 .activity-card__header {
   height: 36px;
@@ -191,8 +235,9 @@ body {
   font-weight: 500;
   line-height: 21px;
 }
-.activity-card__options {
-  color: var(--color-navy-200);
+.activity-card__options:active img, .activity-card__options:hover img, .activity-card__options:focus-visible img {
+  -webkit-filter: brightness(0%) invert(1);
+          filter: brightness(0%) invert(1);
 }
 .activity-card__time {
   display: -webkit-box;
@@ -247,9 +292,6 @@ body {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  height: -webkit-fit-content;
-  height: -moz-fit-content;
-  height: fit-content;
   border-radius: var(--spacing-200);
   overflow: hidden;
 }
@@ -261,9 +303,16 @@ body {
     grid-row: span 1;
   }
 }
+@media (min-width: 90rem) {
+  .profile {
+    -ms-grid-column-span: 1;
+    grid-column: span 1;
+    -ms-grid-row-span: 2;
+    grid-row: span 2;
+  }
+}
 .profile__info {
   background: var(--color-purple-600);
-  padding: var(--spacing-400);
   border-radius: var(--spacing-200);
   display: -webkit-box;
   display: -ms-flexbox;
@@ -272,6 +321,22 @@ body {
       -ms-flex-align: center;
           align-items: center;
   gap: var(--spacing-300);
+  padding: var(--spacing-400);
+}
+@media (min-width: 90rem) {
+  .profile__info {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    gap: 40px;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: start;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
 }
 .profile__avatar {
   width: 64px;
@@ -303,6 +368,14 @@ body {
   line-height: 28px;
   color: var(--color-white);
 }
+@media (min-width: 90rem) {
+  .profile__name {
+    font-family: "Rubik", sans-serif;
+    font-size: 40px;
+    font-weight: 300;
+    line-height: 47px;
+  }
+}
 .profile .filter-time {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -310,6 +383,25 @@ body {
   -ms-flex-pack: distribute;
       justify-content: space-around;
   padding: var(--spacing-300) 0;
+}
+@media (min-width: 90rem) {
+  .profile .filter-time {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: start;
+    height: 100%;
+    padding-left: var(--spacing-400);
+  }
 }
 .profile .filter-time__button {
   color: var(--color-purple-500);
