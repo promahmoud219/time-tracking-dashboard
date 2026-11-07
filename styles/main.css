@@ -178,6 +178,11 @@ body {
     -ms-grid-column: 7;
   }
 }
+.time-tracking-dashboard {
+  width: 100%;
+  max-width: 1110px;
+  margin-inline: auto;
+}
 
 .activity-card {
   background: var(--color-blue-300);
@@ -412,4 +417,20 @@ body {
 
 body {
   background: var(--color-navy-950);
+  min-height: 100vh;
+}
+
+main {
+  min-height: 100vh;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: var(--spacing-300);
 }

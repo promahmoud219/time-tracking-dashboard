@@ -23,4 +23,9 @@
         grid-template-rows: 1fr 1fr;
         gap: var(--spacing-400);
     }
+
+    width: 100%;
+    max-width: 1110px;
+    margin-inline: auto;
+
 }
