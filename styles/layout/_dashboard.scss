@@ -1,10 +1,22 @@
+@use "../abstracts/breakpoints" as *;
+
 .time-tracking-dashboard{
  
-    width: calc(100% - 48px);
-    margin: 80px 24px;
-
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    width: min(calc(100% - 48px), 500px);
+    margin: 80px auto;
+    
+    display: grid;
+    grid-template-columns: 1fr;
     gap: var(--spacing-300);
+    
+    @media (min-width: $breakpoint-tablet) {
+        width: calc(100% - 152px);
+        margin: 173px auto;
+        
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: 1fr 1fr 1fr;
+        
+    }
+
+
 }

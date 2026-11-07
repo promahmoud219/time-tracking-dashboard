@@ -9,8 +9,7 @@
 @use "base/reset" as *;
 @use "base/global" as *;
 
-// Layouts
-@use "layout/activities-grid" as *; 
+// Layouts 
 @use "layout/dashboard" as *; 
 
 // Components
@@ -19,6 +18,9 @@
 
 
 body{
+    // display: flex;
+    // justify-content: center;
+    // align-items: center;
     background: var(--color-navy-950);
 }
  

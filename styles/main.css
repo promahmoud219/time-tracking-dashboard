@@ -82,36 +82,67 @@ body {
   color: var(--color-blue-800);
 }
 
-.activities-grid {
+.time-tracking-dashboard {
+  width: min(100% - 48px, 500px);
+  margin: 80px auto;
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: 1fr;
   grid-template-columns: 1fr;
   gap: var(--spacing-300);
-  width: 100%;
 }
-
-.time-tracking-dashboard {
-  width: calc(100% - 48px);
-  margin: 80px 24px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  gap: var(--spacing-300);
+@media (min-width: 48rem) {
+  .time-tracking-dashboard {
+    width: calc(100% - 152px);
+    margin: 173px auto;
+    -ms-grid-columns: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
+    -ms-grid-rows: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+  }
+  .time-tracking-dashboard > *:nth-child(1) {
+    -ms-grid-row: 1;
+    -ms-grid-column: 1;
+  }
+  .time-tracking-dashboard > *:nth-child(2) {
+    -ms-grid-row: 1;
+    -ms-grid-column: 2;
+  }
+  .time-tracking-dashboard > *:nth-child(3) {
+    -ms-grid-row: 1;
+    -ms-grid-column: 3;
+  }
+  .time-tracking-dashboard > *:nth-child(4) {
+    -ms-grid-row: 2;
+    -ms-grid-column: 1;
+  }
+  .time-tracking-dashboard > *:nth-child(5) {
+    -ms-grid-row: 2;
+    -ms-grid-column: 2;
+  }
+  .time-tracking-dashboard > *:nth-child(6) {
+    -ms-grid-row: 2;
+    -ms-grid-column: 3;
+  }
+  .time-tracking-dashboard > *:nth-child(7) {
+    -ms-grid-row: 3;
+    -ms-grid-column: 1;
+  }
+  .time-tracking-dashboard > *:nth-child(8) {
+    -ms-grid-row: 3;
+    -ms-grid-column: 2;
+  }
+  .time-tracking-dashboard > *:nth-child(9) {
+    -ms-grid-row: 3;
+    -ms-grid-column: 3;
+  }
 }
 
 .activity-card {
   background: var(--color-blue-300);
   border-radius: var(--spacing-200);
   isolation: isolate;
-  z-index: 20;
+  position: relative;
 }
 .activity-card__header {
   height: 36px;
@@ -139,6 +170,11 @@ body {
       -ms-flex-direction: column;
           flex-direction: column;
   gap: var(--spacing-100);
+}
+@media (min-width: 48rem) {
+  .activity-card__body {
+    gap: var(--spacing-200);
+  }
 }
 .activity-card__title-and-options {
   display: -webkit-box;
@@ -169,12 +205,28 @@ body {
       -ms-flex-align: center;
           align-items: center;
 }
+@media (min-width: 48rem) {
+  .activity-card__time {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+}
 .activity-card__current-time {
   font-family: "Rubik", sans-serif;
   font-size: 32px;
   font-weight: 300;
   line-height: 38px;
   color: var(--color-white);
+}
+@media (min-width: 48rem) {
+  .activity-card__current-time {
+    font-family: "Rubik", sans-serif;
+    font-size: 56px;
+    font-weight: 300;
+    line-height: 66px;
+  }
 }
 .activity-card__previous-time {
   font-family: "Rubik", sans-serif;
@@ -187,8 +239,27 @@ body {
 .profile {
   width: 100%;
   background: var(--color-navy-900);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: var(--spacing-100);
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
   border-radius: var(--spacing-200);
   overflow: hidden;
+}
+@media (min-width: 48rem) {
+  .profile {
+    -ms-grid-column-span: 3;
+    grid-column: span 3;
+    -ms-grid-row-span: 1;
+    grid-row: span 1;
+  }
 }
 .profile__info {
   background: var(--color-purple-600);
@@ -197,10 +268,10 @@ body {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   gap: var(--spacing-300);
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
 }
 .profile__avatar {
   width: 64px;

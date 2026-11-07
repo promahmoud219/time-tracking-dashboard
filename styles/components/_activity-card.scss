@@ -1,13 +1,15 @@
 @use "../abstracts/colors" as *;
 @use "../abstracts/spacing" as *;
 @use "../abstracts/typography" as *;
+@use "../abstracts/breakpoints" as *;
 
 .activity-card{
-
+ 
     background: var(--color-blue-300);
     border-radius: var(--spacing-200);
     isolation: isolate;
-    z-index: 20;
+    position: relative;
+ 
 
     &__header{
         
@@ -39,12 +41,14 @@
         flex-direction: column;
         gap: var(--spacing-100);
         
+        @media (min-width: $breakpoint-tablet) {
+            gap: var(--spacing-200);
+        }
     }
-    
+
     &__title-and-options{
         display: flex;    
         justify-content: space-between;
-
     }
     
     &__title{
@@ -61,11 +65,22 @@
         justify-content: space-between;
         align-items: center;
 
+        @media (min-width: $breakpoint-tablet) {
+            flex-direction: column;
+
+        }
+        
     }
     
     &__current-time{
+
         @include text-preset(3);
         color: var(--color-white);
+
+        @media (min-width: $breakpoint-tablet) {
+            @include text-preset(1);
+        }
+
     }
     
     &__previous-time{
