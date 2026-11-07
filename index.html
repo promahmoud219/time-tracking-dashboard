@@ -38,9 +38,9 @@
         <nav class="filter-time" role="group" aria-label="Time Period">
           
           <button 
-            class="button-daily filter-time__button"
+            class="filter-time__button"
             type="button"
-            
+            data-period="daily"
             >
             Daily
           </button>
@@ -49,13 +49,15 @@
             class="button-weekly filter-time__button filter-time__button--active"
             aria-pressed="true"
             type="button"
-          >
+            data-period="weekly"
+            >
             Weekly
           </button>
           
           <button 
             class="button-monthly filter-time__button"
             type="button"
+            data-period="monthly"
           >
             Monthly
           </button>

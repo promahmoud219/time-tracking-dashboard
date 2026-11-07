@@ -14,6 +14,7 @@
         margin: 173px auto;
         
         grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: auto repeat(2, 1fr);
         grid-template-rows: 1fr 1fr 1fr;
         
     }
@@ -25,7 +26,7 @@
     }
 
     width: 100%;
-    max-width: 1110px;
+    max-width: 1116px;
     margin-inline: auto;
 
 }
