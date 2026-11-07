@@ -1,0 +1,77 @@
+@use "../abstracts/colors" as *;
+@use "../abstracts/spacing" as *;
+@use "../abstracts/typography" as *;
+
+.activity-card{
+
+    background: var(--color-blue-300);
+    border-radius: var(--spacing-200);
+    isolation: isolate;
+    z-index: 20;
+
+    &__header{
+        
+        height: 36px; 
+        position: relative;
+        
+        img{
+            width: 78px;
+            height: 78px; 
+            
+            position: absolute;
+            top: 0;
+            right: var(--spacing-300);
+
+            z-index: 0;
+        }
+    }
+
+    &__body{
+
+        position: relative;
+        z-index: 1;
+
+        border-radius: var(--spacing-200);
+        padding: var(--spacing-300);
+        background: var(--color-navy-900);
+
+        display: flex;
+        flex-direction: column;
+        gap: var(--spacing-100);
+        
+    }
+    
+    &__title-and-options{
+        display: flex;    
+        justify-content: space-between;
+
+    }
+    
+    &__title{
+        color: var(--color-white);
+        @include text-preset(5-medium);
+    }
+    
+    &__options{
+        color: var(--color-navy-200);
+    }
+    
+    &__time{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+    }
+    
+    &__current-time{
+        @include text-preset(3);
+        color: var(--color-white);
+    }
+    
+    &__previous-time{
+        @include text-preset(6);
+        color: var(--color-navy-200);
+    }
+
+
+}

@@ -1,0 +1,579 @@
+==========================================
+FILE: ./data.json
+==========================================
+[
+  {
+    "title": "Work",
+    "timeframes": {
+      "daily": {
+        "current": 5,
+        "previous": 7
+      },
+      "weekly": {
+        "current": 32,
+        "previous": 36
+      },
+      "monthly": {
+        "current": 103,
+        "previous": 128
+      }
+    }
+  },
+  {
+    "title": "Play",
+    "timeframes": {
+      "daily": {
+        "current": 1,
+        "previous": 2
+      },
+      "weekly": {
+        "current": 10,
+        "previous": 8
+      },
+      "monthly": {
+        "current": 23,
+        "previous": 29
+      }
+    }
+  },
+  {
+    "title": "Study",
+    "timeframes": {
+      "daily": {
+        "current": 0,
+        "previous": 1
+      },
+      "weekly": {
+        "current": 4,
+        "previous": 7
+      },
+      "monthly": {
+        "current": 13,
+        "previous": 19
+      }
+    }
+  },
+  {
+    "title": "Exercise",
+    "timeframes": {
+      "daily": {
+        "current": 1,
+        "previous": 1
+      },
+      "weekly": {
+        "current": 4,
+        "previous": 5
+      },
+      "monthly": {
+        "current": 11,
+        "previous": 18
+      }
+    }
+  },
+  {
+    "title": "Social",
+    "timeframes": {
+      "daily": {
+        "current": 1,
+        "previous": 3
+      },
+      "weekly": {
+        "current": 5,
+        "previous": 10
+      },
+      "monthly": {
+        "current": 21,
+        "previous": 23
+      }
+    }
+  },
+  {
+    "title": "Self Care",
+    "timeframes": {
+      "daily": {
+        "current": 0,
+        "previous": 1
+      },
+      "weekly": {
+        "current": 2,
+        "previous": 2
+      },
+      "monthly": {
+        "current": 7,
+        "previous": 11
+      }
+    }
+  }
+]
+
+==========================================
+FILE: ./index.html
+==========================================
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="stylesheet" href="./styles/main.css">
+  
+  <!-- Rubic  -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
+  
+  <title>Frontend Mentor | Time tracking dashboard</title>
+
+
+</head>
+<body>
+ 
+  <main>
+
+    <article class="time-tracking-dashboard">
+
+      <article class="profile">
+
+        <div class="profile__info">
+
+          <img src="./images/image-jeremy.png" alt="profile image of Jeremy" class="profile__avatar">
+
+          <div class="profile__title">
+            <p class="profile__label">Report for</p>
+            <h1 class="profile__name">Jeremy Robson</h1>
+          </div>
+
+        </div>
+
+        <nav class="filter-time" role="group" aria-label="Time Period">
+          
+          <button 
+            class="button-daily filter-time__button"
+            type="button"
+            
+            >
+            Daily
+          </button>
+          
+          <button 
+            class="button-weekly filter-time__button filter-time__button--active"
+            aria-pressed="true";
+            type="button"
+          >
+            Weekly
+          </button>
+          
+          <button 
+            class="button-monthly filter-time__button"
+            type="button"
+          >
+            Monthly
+          </button>
+
+        </nav>
+
+      </article>
+
+      <div class="activities-grid">
+        <article class="activity-card">
+          
+          <header class="activity-card__header">
+            <img src="./images/icon-play.svg" alt="" class="activity-card__icon">
+          </header>
+          
+          <div class="activity-card__body">
+            <div class="activity-card__title-and-options">
+              <h2 class="activity-card__title">work</h2>
+              <button class="activity-card__options" aria-label="activity card options">
+                <img src="./images/icon-ellipsis.svg" alt="">
+              </button>
+            </div>
+
+            <div class="activity-card__time">
+              <p class="activity-card__current-time">4hrs</p>
+              <p class="activity-card__previous-time">Last Week - 5hrs</p>
+            </div>
+          </div>
+        </article>
+        <article class="activity-card">
+          
+          <header class="activity-card__header">
+            <img src="./images/icon-play.svg" alt="" class="activity-card__icon">
+          </header>
+          
+          <div class="activity-card__body">
+            <div class="activity-card__title-and-options">
+              <h2 class="activity-card__title">work</h2>
+              <button class="activity-card__options" aria-label="activity card options">
+                <img src="./images/icon-ellipsis.svg" alt="">
+              </button>
+            </div>
+
+            <div class="activity-card__time">
+              <p class="activity-card__current-time">4hrs</p>
+              <p class="activity-card__previous-time">Last Week - 5hrs</p>
+            </div>
+          </div>
+        </article>
+        <article class="activity-card">
+          
+          <header class="activity-card__header">
+            <img src="./images/icon-play.svg" alt="" class="activity-card__icon">
+          </header>
+          
+          <div class="activity-card__body">
+            <div class="activity-card__title-and-options">
+              <h2 class="activity-card__title">work</h2>
+              <button class="activity-card__options" aria-label="activity card options">
+                <img src="./images/icon-ellipsis.svg" alt="">
+              </button>
+            </div>
+
+            <div class="activity-card__time">
+              <p class="activity-card__current-time">4hrs</p>
+              <p class="activity-card__previous-time">Last Week - 5hrs</p>
+            </div>
+          </div>
+        </article>
+        <article class="activity-card">
+          
+          <header class="activity-card__header">
+            <img src="./images/icon-play.svg" alt="" class="activity-card__icon">
+          </header>
+          
+          <div class="activity-card__body">
+            <div class="activity-card__title-and-options">
+              <h2 class="activity-card__title">work</h2>
+              <button class="activity-card__options" aria-label="activity card options">
+                <img src="./images/icon-ellipsis.svg" alt="">
+              </button>
+            </div>
+
+            <div class="activity-card__time">
+              <p class="activity-card__current-time">4hrs</p>
+              <p class="activity-card__previous-time">Last Week - 5hrs</p>
+            </div>
+          </div>
+        </article>
+        <article class="activity-card">
+          
+          <header class="activity-card__header">
+            <img src="./images/icon-play.svg" alt="" class="activity-card__icon">
+          </header>
+          
+          <div class="activity-card__body">
+            <div class="activity-card__title-and-options">
+              <h2 class="activity-card__title">work</h2>
+              <button class="activity-card__options" aria-label="activity card options">
+                <img src="./images/icon-ellipsis.svg" alt="">
+              </button>
+            </div>
+
+            <div class="activity-card__time">
+              <p class="activity-card__current-time">4hrs</p>
+              <p class="activity-card__previous-time">Last Week - 5hrs</p>
+            </div>
+          </div>
+        </article>
+        <article class="activity-card">
+          
+          <header class="activity-card__header">
+            <img src="./images/icon-play.svg" alt="" class="activity-card__icon">
+          </header>
+          
+          <div class="activity-card__body">
+            <div class="activity-card__title-and-options">
+              <h2 class="activity-card__title">work</h2>
+              <button class="activity-card__options" aria-label="activity card options">
+                <img src="./images/icon-ellipsis.svg" alt="">
+              </button>
+            </div>
+
+            <div class="activity-card__time">
+              <p class="activity-card__current-time">4hrs</p>
+              <p class="activity-card__previous-time">Last Week - 5hrs</p>
+            </div>
+          </div>
+        </article>
+      </div>
+
+    </article>
+    
+  </main>
+   
+  <script src="main.js"></script>
+</body>
+</html>
+
+==========================================
+FILE: ./main.js
+==========================================
+
+
+
+
+console.log (getAllActivities());
+
+async function getAllActivities() {
+
+    const response = await fetch("./data.json");
+    
+    if(!response.ok)
+        throw new Error("HTTP Error");
+
+    return await response.json();
+}
+
+==========================================
+FILE: ./styles/main.css
+==========================================
+:root {
+  --color-white: #FFFFFF;
+  --color-black: #000000;
+  --color-navy-950: #0E1323;
+  --color-navy-900: #1C204B;
+  --color-navy-800: #33397A;
+  --color-navy-200: #BBC0FF;
+  --color-purple-700: #7335D2;
+  --color-purple-600: #5747EA;
+  --color-purple-500: #7078C9;
+  --color-orange-300: #FF8B64;
+  --color-blue-300: #55C2E6;
+  --color-pink-400: #FF5E7D;
+  --color-green-400: #4BCF82;
+  --color-yellow-300: #F1C75B;
+  --color-grey-200: #D8D8D8;
+}
+
+:root {
+  --spacing-100: 8px;
+  --spacing-200: 16px;
+  --spacing-300: 24px;
+  --spacing-400: 32px;
+  --spacing-500: 40px;
+}
+
+/* Box Sizing */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+/* Form Elements */
+button,
+input,
+textarea,
+select {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+/* Images */
+img,
+picture {
+  display: block;
+  max-width: 100%;
+}
+
+/* Lists */
+ul,
+ol {
+  list-style: none;
+}
+
+/* Links */
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* Buttons */
+button {
+  border: none;
+  background: none;
+}
+
+html {
+  font-family: "Roboto", sans-serif;
+}
+
+body {
+  min-height: 100vh;
+  background-color: var(--color-blue-700);
+  background-color: white;
+  color: var(--color-blue-800);
+}
+
+.activities-grid {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr;
+  grid-template-columns: 1fr;
+  gap: var(--spacing-300);
+  width: 100%;
+}
+
+.time-tracking-dashboard {
+  width: calc(100% - 48px);
+  margin: 80px 24px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: var(--spacing-300);
+}
+
+.activity-card {
+  background: var(--color-blue-300);
+  border-radius: var(--spacing-200);
+  z-index: 20;
+}
+.activity-card__header {
+  height: 36px;
+  position: relative;
+}
+.activity-card__header img {
+  width: 78px;
+  height: 78px;
+  z-index: -1;
+  position: absolute;
+  right: var(--spacing-300);
+}
+.activity-card__body {
+  border-radius: var(--spacing-200);
+  padding: var(--spacing-300);
+  background: var(--color-navy-900);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: var(--spacing-100);
+}
+.activity-card__title-and-options {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+.activity-card__title {
+  color: var(--color-white);
+  font-family: "Rubik", sans-serif;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 21px;
+}
+.activity-card__options {
+  color: var(--color-navy-200);
+}
+.activity-card__time {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.activity-card__current-time {
+  font-family: "Rubik", sans-serif;
+  font-size: 32px;
+  font-weight: 300;
+  line-height: 38px;
+  color: var(--color-white);
+}
+.activity-card__previous-time {
+  font-family: "Rubik", sans-serif;
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 18px;
+  color: var(--color-navy-200);
+}
+
+.profile {
+  width: 100%;
+  background: var(--color-navy-900);
+  border-radius: var(--spacing-200);
+  overflow: hidden;
+}
+.profile__info {
+  background: var(--color-purple-600);
+  padding: var(--spacing-400);
+  border-radius: var(--spacing-200);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: var(--spacing-300);
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+.profile__avatar {
+  width: 64px;
+  height: 64px;
+  border: 3px solid var(--color-white);
+  border-radius: 50%;
+}
+.profile__title {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: var(--spacing-100);
+}
+.profile__label {
+  font-family: "Rubik", sans-serif;
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 18px;
+  color: var(--color-navy-200);
+}
+.profile__name {
+  font-family: "Rubik", sans-serif;
+  font-size: 24px;
+  font-weight: 300;
+  line-height: 28px;
+  color: var(--color-white);
+}
+.profile .filter-time {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  padding: var(--spacing-300) 0;
+}
+.profile .filter-time__button {
+  color: var(--color-purple-500);
+}
+.profile .filter-time__button:hover, .profile .filter-time__button--active {
+  color: var(--color-white);
+}
+
+body {
+  background: var(--color-navy-950);
+}
+

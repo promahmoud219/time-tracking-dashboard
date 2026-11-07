@@ -1,0 +1,61 @@
+@use "../abstracts/colors" as *;
+@use "../abstracts/spacing" as *;
+@use "../abstracts/typography" as *;
+
+.profile{
+    width: 100%;
+    background: var(--color-navy-900);
+
+    border-radius: var(--spacing-200);
+
+    overflow: hidden;
+
+    &__info{
+        background: var(--color-purple-600);
+        padding: var(--spacing-400);
+        border-radius: var(--spacing-200);
+
+        display: flex;
+        gap: var(--spacing-300);
+        justify-content: space-between;
+    }
+
+    &__avatar{
+        width: 64px;
+        height: 64px;
+        border: 3px solid var(--color-white);
+        border-radius: 50%;
+    }
+
+    &__title{
+        display: flex;
+        flex-direction: column;
+        gap: var(--spacing-100);
+    }
+
+    &__label{
+        @include text-preset(6);
+        color: var(--color-navy-200);
+    }
+    
+    &__name{
+        @include text-preset(4);
+        color: var(--color-white);
+    }
+
+    .filter-time{
+        display: flex;
+        justify-content: space-around;
+        padding: var(--spacing-300) 0 ;
+
+        &__button{
+            color: var(--color-purple-500);
+            
+            &:hover, &--active{
+                color: var(--color-white);
+                
+            }
+        }
+    }
+
+}

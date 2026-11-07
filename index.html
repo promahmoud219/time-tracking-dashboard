@@ -22,23 +22,44 @@
 
     <article class="time-tracking-dashboard">
 
-      <article class="profile-card">
+      <article class="profile">
 
-        <div class="profile-info">
+        <div class="profile__info">
 
-          <img src="./images/image-jeremy.png" alt="profile image of Jeremy" class="profile-avatar">
+          <img src="./images/image-jeremy.png" alt="profile image of Jeremy" class="profile__avatar">
 
-          <div>
-            <p class="profile-label">Report for</p>
-            <p class="profile-name">Jeremy Robson</p>
+          <div class="profile__title">
+            <p class="profile__label">Report for</p>
+            <h1 class="profile__name">Jeremy Robson</h1>
           </div>
 
         </div>
 
-        <nav class="filter-time">
-          <button class="button-daily filter-time__button">Daily</button>
-          <button class="button-daily filter-time__button filter-time__button--active">Weekly</button>
-          <button class="button-daily filter-time__button">Monthly</button>
+        <nav class="filter-time" role="group" aria-label="Time Period">
+          
+          <button 
+            class="button-daily filter-time__button"
+            type="button"
+            
+            >
+            Daily
+          </button>
+          
+          <button 
+            class="button-weekly filter-time__button filter-time__button--active"
+            aria-pressed="true"
+            type="button"
+          >
+            Weekly
+          </button>
+          
+          <button 
+            class="button-monthly filter-time__button"
+            type="button"
+          >
+            Monthly
+          </button>
+
         </nav>
 
       </article>
@@ -50,16 +71,18 @@
             <img src="./images/icon-play.svg" alt="" class="activity-card__icon">
           </header>
           
-          <div class="">
-            <span class="activity-card__title">work</span>
-            <button class="activity-card__options" aria-label="activity card options">
-              <img src="./images/icon-ellipsis.svg" alt="">
-            </button>
-          </div>
+          <div class="activity-card__body">
+            <div class="activity-card__title-and-options">
+              <h2 class="activity-card__title">work</h2>
+              <button class="activity-card__options" aria-label="activity card options">
+                <img src="./images/icon-ellipsis.svg" alt="">
+              </button>
+            </div>
 
-          <div class="activity-card__time">
-            <p class="activity-card__current-time">4hrs</p>
-            <p class="activity-card__previous-time">Last Week - 5hrs</p>
+            <div class="activity-card__time">
+              <p class="activity-card__current-time">4hrs</p>
+              <p class="activity-card__previous-time">Last Week - 5hrs</p>
+            </div>
           </div>
         </article>
         <article class="activity-card">
@@ -68,16 +91,18 @@
             <img src="./images/icon-play.svg" alt="" class="activity-card__icon">
           </header>
           
-          <div class="">
-            <span class="activity-card__title">work</span>
-            <button class="activity-card__options" aria-label="activity card options">
-              <img src="./images/icon-ellipsis.svg" alt="">
-            </button>
-          </div>
+          <div class="activity-card__body">
+            <div class="activity-card__title-and-options">
+              <h2 class="activity-card__title">work</h2>
+              <button class="activity-card__options" aria-label="activity card options">
+                <img src="./images/icon-ellipsis.svg" alt="">
+              </button>
+            </div>
 
-          <div class="activity-card__time">
-            <p class="activity-card__current-time">4hrs</p>
-            <p class="activity-card__previous-time">Last Week - 5hrs</p>
+            <div class="activity-card__time">
+              <p class="activity-card__current-time">4hrs</p>
+              <p class="activity-card__previous-time">Last Week - 5hrs</p>
+            </div>
           </div>
         </article>
         <article class="activity-card">
@@ -86,16 +111,18 @@
             <img src="./images/icon-play.svg" alt="" class="activity-card__icon">
           </header>
           
-          <div class="">
-            <span class="activity-card__title">work</span>
-            <button class="activity-card__options" aria-label="activity card options">
-              <img src="./images/icon-ellipsis.svg" alt="">
-            </button>
-          </div>
+          <div class="activity-card__body">
+            <div class="activity-card__title-and-options">
+              <h2 class="activity-card__title">work</h2>
+              <button class="activity-card__options" aria-label="activity card options">
+                <img src="./images/icon-ellipsis.svg" alt="">
+              </button>
+            </div>
 
-          <div class="activity-card__time">
-            <p class="activity-card__current-time">4hrs</p>
-            <p class="activity-card__previous-time">Last Week - 5hrs</p>
+            <div class="activity-card__time">
+              <p class="activity-card__current-time">4hrs</p>
+              <p class="activity-card__previous-time">Last Week - 5hrs</p>
+            </div>
           </div>
         </article>
         <article class="activity-card">
@@ -104,16 +131,18 @@
             <img src="./images/icon-play.svg" alt="" class="activity-card__icon">
           </header>
           
-          <div class="">
-            <span class="activity-card__title">work</span>
-            <button class="activity-card__options" aria-label="activity card options">
-              <img src="./images/icon-ellipsis.svg" alt="">
-            </button>
-          </div>
+          <div class="activity-card__body">
+            <div class="activity-card__title-and-options">
+              <h2 class="activity-card__title">work</h2>
+              <button class="activity-card__options" aria-label="activity card options">
+                <img src="./images/icon-ellipsis.svg" alt="">
+              </button>
+            </div>
 
-          <div class="activity-card__time">
-            <p class="activity-card__current-time">4hrs</p>
-            <p class="activity-card__previous-time">Last Week - 5hrs</p>
+            <div class="activity-card__time">
+              <p class="activity-card__current-time">4hrs</p>
+              <p class="activity-card__previous-time">Last Week - 5hrs</p>
+            </div>
           </div>
         </article>
         <article class="activity-card">
@@ -122,16 +151,18 @@
             <img src="./images/icon-play.svg" alt="" class="activity-card__icon">
           </header>
           
-          <div class="">
-            <span class="activity-card__title">work</span>
-            <button class="activity-card__options" aria-label="activity card options">
-              <img src="./images/icon-ellipsis.svg" alt="">
-            </button>
-          </div>
+          <div class="activity-card__body">
+            <div class="activity-card__title-and-options">
+              <h2 class="activity-card__title">work</h2>
+              <button class="activity-card__options" aria-label="activity card options">
+                <img src="./images/icon-ellipsis.svg" alt="">
+              </button>
+            </div>
 
-          <div class="activity-card__time">
-            <p class="activity-card__current-time">4hrs</p>
-            <p class="activity-card__previous-time">Last Week - 5hrs</p>
+            <div class="activity-card__time">
+              <p class="activity-card__current-time">4hrs</p>
+              <p class="activity-card__previous-time">Last Week - 5hrs</p>
+            </div>
           </div>
         </article>
         <article class="activity-card">
@@ -140,16 +171,18 @@
             <img src="./images/icon-play.svg" alt="" class="activity-card__icon">
           </header>
           
-          <div class="">
-            <span class="activity-card__title">work</span>
-            <button class="activity-card__options" aria-label="activity card options">
-              <img src="./images/icon-ellipsis.svg" alt="">
-            </button>
-          </div>
+          <div class="activity-card__body">
+            <div class="activity-card__title-and-options">
+              <h2 class="activity-card__title">work</h2>
+              <button class="activity-card__options" aria-label="activity card options">
+                <img src="./images/icon-ellipsis.svg" alt="">
+              </button>
+            </div>
 
-          <div class="activity-card__time">
-            <p class="activity-card__current-time">4hrs</p>
-            <p class="activity-card__previous-time">Last Week - 5hrs</p>
+            <div class="activity-card__time">
+              <p class="activity-card__current-time">4hrs</p>
+              <p class="activity-card__previous-time">Last Week - 5hrs</p>
+            </div>
           </div>
         </article>
       </div>

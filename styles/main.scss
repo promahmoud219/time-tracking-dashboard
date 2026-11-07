@@ -9,10 +9,16 @@
 @use "base/reset" as *;
 @use "base/global" as *;
 
-// Component
-@use "components/button" as *;
-@use "components/input" as *;
-@use "components/modal" as *;
+// Layouts
+@use "layout/activities-grid" as *; 
+@use "layout/dashboard" as *; 
 
+// Components
+@use "components/activity-card" as *;
+@use "components/profile" as *;
+
+
+body{
+    background: var(--color-navy-950);
+}
  
-
