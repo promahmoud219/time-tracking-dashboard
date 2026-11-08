@@ -1,4 +1,15 @@
+DEFAULT_TIMEFRAME = "weekly";
+let selectedTimeFrame = DEFAULT_TIMEFRAME;
+
+const timeframeLabel = {
+    daily: "Day",
+    weekly: "Week",
+    monthly: "Month"
+};
+
+
 const timeTrackingDashboard = document.querySelector(".time-tracking-dashboard");
+
 
 
 async function getAllActivities() {
@@ -61,7 +72,7 @@ function createActivityCard(activity) {
     
     options.classList.add("activity-card__options");
     options.type = "button";
-    options.setAttribute("aria-label", "activity card options");
+    options.setAttribute("aria-label", `More options for ${activity.title}`);
 
     time.classList.add("activity-card__time");
     currentTime.classList.add("activity-card__current-time");
@@ -90,7 +101,10 @@ function createActivityCard(activity) {
     // changable part
 
     title.textContent = activity.title;
-    
+
+    currentTime.textContent = `${activity.timeframes[selectedTimeFrame].current}hrs` ;
+    previousTime.textContent = `Last ${timeframeLabel[selectedTimeFrame]} - ${activity.timeframes[selectedTimeFrame].previous}hrs` ;
+
     icon.src = activityIconSource[activity.title];
     activityCard.style.backgroundColor = activityColors[activity.title];
     return activityCard;
@@ -110,4 +124,4 @@ async function renderActivities() {
     timeTrackingDashboard.append(fragment);  
 }
 
-renderActivities();
+renderActivities().catch(error => {console.error("Failed to render activities: ", error)});
