@@ -1,10 +1,10 @@
 DEFAULT_TIMEFRAME = "weekly";
-let selectedTimeFrame = DEFAULT_TIMEFRAME;
+let selectedTimeframe = DEFAULT_TIMEFRAME;
 
 const timeframeLabel = {
-    daily: "Day",
-    weekly: "Week",
-    monthly: "Month"
+    daily: "Yesterday",
+    weekly: "Last Week",
+    monthly: "Last Month"
 };
 
 
@@ -102,8 +102,8 @@ function createActivityCard(activity) {
 
     title.textContent = activity.title;
 
-    currentTime.textContent = `${activity.timeframes[selectedTimeFrame].current}hrs` ;
-    previousTime.textContent = `Last ${timeframeLabel[selectedTimeFrame]} - ${activity.timeframes[selectedTimeFrame].previous}hrs` ;
+    currentTime.textContent = `${activity.timeframes[selectedTimeframe].current}hrs` ;
+    previousTime.textContent = `${timeframeLabel[selectedTimeframe]} - ${activity.timeframes[selectedTimeframe].previous}hrs`;
 
     icon.src = activityIconSource[activity.title];
     activityCard.style.backgroundColor = activityColors[activity.title];
