@@ -153,9 +153,9 @@ body {
 .activity-card__title {
   color: var(--color-white);
   font-family: "Rubik", sans-serif;
-  font-size: 18px;
+  font-size: 1.125rem;
   font-weight: 500;
-  line-height: 21px;
+  line-height: 1.3125rem;
 }
 .activity-card__options:active img, .activity-card__options:hover img, .activity-card__options:focus-visible img {
   filter: brightness(0%) invert(1);
@@ -173,24 +173,24 @@ body {
 }
 .activity-card__current-time {
   font-family: "Rubik", sans-serif;
-  font-size: 32px;
+  font-size: 2rem;
   font-weight: 300;
-  line-height: 38px;
+  line-height: 2.375rem;
   color: var(--color-white);
 }
 @media (min-width: 48rem) {
   .activity-card__current-time {
     font-family: "Rubik", sans-serif;
-    font-size: 56px;
+    font-size: 3.5rem;
     font-weight: 300;
-    line-height: 66px;
+    line-height: 4.125rem;
   }
 }
 .activity-card__previous-time {
   font-family: "Rubik", sans-serif;
-  font-size: 15px;
+  font-size: 0.9375rem;
   font-weight: 400;
-  line-height: 18px;
+  line-height: 1.125rem;
   color: var(--color-navy-200);
 }
 
@@ -244,24 +244,24 @@ body {
 }
 .profile__label {
   font-family: "Rubik", sans-serif;
-  font-size: 15px;
+  font-size: 0.9375rem;
   font-weight: 400;
-  line-height: 18px;
+  line-height: 1.125rem;
   color: var(--color-navy-200);
 }
 .profile__name {
   font-family: "Rubik", sans-serif;
-  font-size: 24px;
+  font-size: 1.5rem;
   font-weight: 300;
-  line-height: 28px;
+  line-height: 1.75rem;
   color: var(--color-white);
 }
 @media (min-width: 90rem) {
   .profile__name {
     font-family: "Rubik", sans-serif;
-    font-size: 40px;
+    font-size: 2.5rem;
     font-weight: 300;
-    line-height: 47px;
+    line-height: 2.9375rem;
   }
 }
 .profile .filter-time {
