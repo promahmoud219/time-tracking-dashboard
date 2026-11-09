@@ -154,13 +154,13 @@ filterTime.addEventListener("click", (event) => {
     button.setAttribute("aria-pressed", "true");
 
     activities.forEach(activity => {
-        filterTimeFunction(activity, selectedTimeframe);
+        updateActivityCardTimeframe(activity, selectedTimeframe);
     })
 
 })
 
 
-function filterTimeFunction(activity, selectedTimeframe){
+function updateActivityCardTimeframe(activity, selectedTimeframe){
 
     const activityCard = document.querySelector(`.activity-card[data-activity="${activity.title}"]`);
 
