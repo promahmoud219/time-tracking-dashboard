@@ -1,4 +1,4 @@
-DEFAULT_TIMEFRAME = "weekly";
+const DEFAULT_TIMEFRAME = "weekly";
 let selectedTimeframe = DEFAULT_TIMEFRAME;
 
 const timeframeLabel = {
@@ -6,6 +6,18 @@ const timeframeLabel = {
     weekly: "Last Week",
     monthly: "Last Month"
 };
+
+let activities = [];
+
+async function init() {
+    activities = await getAllActivities();
+
+    renderActivities(activities);
+}
+
+init().catch(error => {
+    console.error("Failed to initialize dashboard:", error);
+});
 
 
 const timeTrackingDashboard = document.querySelector(".time-tracking-dashboard");
@@ -21,8 +33,7 @@ async function getAllActivities() {
 
     return await response.json();
 }
-
-
+ 
 
 const activityColors = {
     Work: "#FF8B64",
@@ -107,13 +118,14 @@ function createActivityCard(activity) {
 
     icon.src = activityIconSource[activity.title];
     activityCard.style.backgroundColor = activityColors[activity.title];
+
+    activityCard.setAttribute("data-activity", activity.title);
+
     return activityCard;
 }
 
 
-async function renderActivities() {
-    
-    const activities = await getAllActivities();
+function renderActivities(activities) {
     
     const fragment = document.createDocumentFragment();
 
@@ -124,4 +136,34 @@ async function renderActivities() {
     timeTrackingDashboard.append(fragment);  
 }
 
-renderActivities().catch(error => {console.error("Failed to render activities: ", error)});
+
+const filterTime = document.querySelector(".filter-time");
+
+filterTime.addEventListener("click", (event) => {
+    
+    let button = event.target.closest("[data-period]");
+    let timeframe = button.dataset.period;
+    
+    let activeButton = document.querySelector(".filter-time__button--active");
+    activeButton.classList.remove("filter-time__button--active");
+    button.classList.add("filter-time__button--active");
+    
+
+    activities.forEach(activity => {
+        filterTimeFunction(activity, timeframe);
+    })
+
+})
+
+
+function filterTimeFunction(activity, timeframe){
+
+    const activityCard = document.querySelector(`.activity-card[data-activity="${activity.title}"]`);
+    
+    const currentTime = activityCard.querySelector(".activity-card__current-time");
+    const previousTime = activityCard.querySelector(".activity-card__previous-time");
+
+    currentTime.textContent = `${activity.timeframes[timeframe].current}hrs` ;
+    previousTime.textContent = `${timeframeLabel[timeframe]} - ${activity.timeframes[timeframe].previous}hrs`;
+}
+
