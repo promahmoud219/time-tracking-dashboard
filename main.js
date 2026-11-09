@@ -31,7 +31,7 @@ async function getAllActivities() {
     if(!response.ok)
         throw new Error(`Failed to fetch activities: ${response.status}`);
 
-    return await response.json();
+    return response.json();
 }
  
 
@@ -154,7 +154,7 @@ filterTime.addEventListener("click", (event) => {
     button.setAttribute("aria-pressed", "true");
 
     activities.forEach(activity => {
-        updateActivityCardTimeframe(activity, selectedTimeframe);
+        filterTimeFunction(activity, selectedTimeframe);
     })
 
 })
