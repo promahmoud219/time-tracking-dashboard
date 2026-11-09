@@ -86,7 +86,6 @@ body {
     width: calc(100% - 152px);
     margin: 173px auto;
     grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: auto repeat(2, 1fr);
     grid-template-rows: 1fr 1fr 1fr;
   }
 }
