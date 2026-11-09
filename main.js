@@ -108,17 +108,15 @@ function createActivityCard(activity) {
     time.append(currentTime, previousTime);
     
 
-    // changable part
-
     title.textContent = activity.title;
-
-    currentTime.textContent = `${activity.timeframes[selectedTimeframe].current}hrs` ;
-    previousTime.textContent = `${timeframeLabel[selectedTimeframe]} - ${activity.timeframes[selectedTimeframe].previous}hrs`;
-
     icon.src = activityIconSource[activity.title];
     activityCard.style.backgroundColor = activityColors[activity.title];
-
     activityCard.setAttribute("data-activity", activity.title);
+
+ 
+    // changable part
+    updateActivityTimeDisplay(activity, selectedTimeframe, currentTime, previousTime);
+
 
     return activityCard;
 }
@@ -151,22 +149,21 @@ filterTime.addEventListener("click", (event) => {
     
     button.classList.add("filter-time__button--active"); 
     button.setAttribute("aria-pressed", "true");
-
+    
+    let activityCard;
+    let currentTime;
+    let previousTime;
+    
     activities.forEach(activity => {
-        updateActivityCardTimeframe(activity, selectedTimeframe);
+        activityCard = document.querySelector(`.activity-card[data-activity="${activity.title}"]`);
+        currentTime = activityCard.querySelector(".activity-card__current-time");
+        previousTime = activityCard.querySelector(".activity-card__previous-time");
+        updateActivityTimeDisplay(activity, selectedTimeframe, currentTime, previousTime);
     })
 
 })
 
-
-function updateActivityCardTimeframe(activity, selectedTimeframe){
-
-    const activityCard = document.querySelector(`.activity-card[data-activity="${activity.title}"]`);
-
-    const currentTime = activityCard.querySelector(".activity-card__current-time");
-    const previousTime = activityCard.querySelector(".activity-card__previous-time");
-
+function updateActivityTimeDisplay(activity, selectedTimeframe, currentTime, previousTime) {
     currentTime.textContent = `${activity.timeframes[selectedTimeframe].current}hrs` ;
     previousTime.textContent = `${timeframeLabel[selectedTimeframe]} - ${activity.timeframes[selectedTimeframe].previous}hrs`;
 }
-
