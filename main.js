@@ -142,28 +142,31 @@ const filterTime = document.querySelector(".filter-time");
 filterTime.addEventListener("click", (event) => {
     
     let button = event.target.closest("[data-period]");
-    let timeframe = button.dataset.period;
-    
+    selectedTimeframe = button.dataset.period;
+
     let activeButton = document.querySelector(".filter-time__button--active");
+
     activeButton.classList.remove("filter-time__button--active");
-    button.classList.add("filter-time__button--active");
+    activeButton.removeAttribute("aria-pressed");
     
+    button.classList.add("filter-time__button--active"); 
+    button.setAttribute("aria-pressed", "true");
 
     activities.forEach(activity => {
-        filterTimeFunction(activity, timeframe);
+        filterTimeFunction(activity, selectedTimeframe);
     })
 
 })
 
 
-function filterTimeFunction(activity, timeframe){
+function filterTimeFunction(activity, selectedTimeframe){
 
     const activityCard = document.querySelector(`.activity-card[data-activity="${activity.title}"]`);
-    
+
     const currentTime = activityCard.querySelector(".activity-card__current-time");
     const previousTime = activityCard.querySelector(".activity-card__previous-time");
 
-    currentTime.textContent = `${activity.timeframes[timeframe].current}hrs` ;
-    previousTime.textContent = `${timeframeLabel[timeframe]} - ${activity.timeframes[timeframe].previous}hrs`;
+    currentTime.textContent = `${activity.timeframes[selectedTimeframe].current}hrs` ;
+    previousTime.textContent = `${timeframeLabel[selectedTimeframe]} - ${activity.timeframes[selectedTimeframe].previous}hrs`;
 }
 
