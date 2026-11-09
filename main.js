@@ -153,7 +153,7 @@ filterTime.addEventListener("click", (event) => {
     button.setAttribute("aria-pressed", "true");
 
     activities.forEach(activity => {
-        filterTimeFunction(activity, selectedTimeframe);
+        updateActivityCardTimeframe(activity, selectedTimeframe);
     })
 
 })
