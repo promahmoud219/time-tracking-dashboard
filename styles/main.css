@@ -75,8 +75,9 @@ body {
 }
 
 .time-tracking-dashboard {
-  width: min(100% - 48px, 500px);
-  margin: 80px auto;
+  width: 100%;
+  max-width: 1116px;
+  margin-inline: auto;
   display: grid;
   grid-template-columns: 1fr;
   gap: var(--spacing-300);
@@ -95,11 +96,6 @@ body {
     grid-template-rows: 1fr 1fr;
     gap: var(--spacing-400);
   }
-}
-.time-tracking-dashboard {
-  width: 100%;
-  max-width: 1116px;
-  margin-inline: auto;
 }
 
 .activity-card {
