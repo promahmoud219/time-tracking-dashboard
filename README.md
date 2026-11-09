@@ -1,113 +1,146 @@
-# Frontend Mentor - Time tracking dashboard
+# Time Tracking Dashboard
 
-![Design preview for the Time tracking dashboard coding challenge](./preview.jpg)
+A responsive time tracking dashboard built as a solution to the [Frontend Mentor Time Tracking Dashboard challenge](https://www.frontendmentor.io/challenges/time-tracking-dashboard-UIQ7167Jw).
 
-## Welcome! 👋
+The project displays activity statistics across different time periods, allowing users to switch between daily, weekly, and monthly views.
 
-Thanks for checking out this front-end coding challenge.
+## Table of Contents
 
-[Frontend Mentor](https://www.frontendmentor.io) challenges help you improve your coding skills by building realistic projects.
+- [Overview](#overview)
+- [Features](#features)
+- [Screenshot](#screenshot)
+- [Links](#links)
+- [Built With](#built-with)
+- [Project Structure](#project-structure)
+- [What I Learned](#what-i-learned)
+- [AI Collaboration](#ai-collaboration)
+- [Future Improvements](#future-improvements)
+- [Author](#author)
 
-**To do this challenge, you need a basic understanding of HTML, CSS and JavaScript.**
+## Overview
 
-## The challenge
+### Features
 
-Your challenge is to build out this dashboard and get it looking as close to the design as possible.
+- Responsive layout for mobile, tablet, and desktop screens.
+- Dynamic activity cards generated from JSON data.
+- Fetch API for retrieving activity data.
+- Three available timeframes:
+  - Daily
+  - Weekly
+  - Monthly
+- Interactive timeframe selection.
+- Hover and focus states for interactive elements.
+- Accessible timeframe controls using ARIA attributes.
+- SCSS architecture with organized partials and reusable design tokens.
 
-You can use any tools you like to help you complete the challenge. So if you've got something you'd like to practice, feel free to give it a go.
+## Screenshot
 
-If you would like to practice working with JSON data, we provide a local `data.json` file for the activities. This means you'll be able to pull the data from there instead of using the content in the `.html` file.
+![Time Tracking Dashboard Screenshot For Mobile ](./images/screenshots/screenshot_mobile.png)
 
-Your users should be able to:
+![Time Tracking Dashboard Screenshot For Tablet ](./images/screenshots/screenshot_tablet.png.png)
 
-- View the optimal layout for the site depending on their device's screen size
-- See hover states for all interactive elements on the page
-- Switch between viewing Daily, Weekly, and Monthly stats
+![Time Tracking Dashboard Screenshot For Desktop ](./images/screenshots/screenshot_desktop.png.png)
 
-### Want some support on the challenge? 
+## Links
 
-[Join our community](https://www.frontendmentor.io/community) and ask questions in the **#help** channel.
+- **Frontend Mentor Challenge:** [View Challenge](https://www.frontendmentor.io/challenges/time-tracking-dashboard-UIQ7167Jw)
+- **Solution URL:** [https://www.frontendmentor.io/solutions/time-tracking-dashboard-6NRRgI5Ytt]
+- **Live Site:** [https://promahmoud219.github.io/time-tracking-dashboard/]
+- **GitHub Repository:** [View Source Code](https://github.com/promahmoud219/time-tracking-dashboard)
 
-### Expected behaviour
+## Built With
 
-- The text for the previous period's time should change based on the active timeframe. For Daily, it should read "Yesterday" e.g "Yesterday - 2hrs". For Weekly, it should read "Last Week" e.g. "Last Week - 32hrs". For monthly, it should read "Last Month" e.g. "Last Month - 19hrs".
+- Semantic HTML5
+- CSS3
+- Sass (SCSS)
+- JavaScript (Vanilla JS)
+- CSS Grid
+- Flexbox
+- CSS Custom Properties
+- Fetch API
+- JSON
+- Responsive Design
+- Mobile-first workflow
 
-## Where to find everything
+## Project Structure
 
-Your task is to build out the project to the designs inside the `/design` folder. You will find both a mobile and a desktop version of the design.
+```text
+time-tracking-dashboard/
+│
+├── images/
+├── styles/
+│   ├── abstracts/
+│   ├── components/
+│   ├── layout/
+│   ├── main.scss
+│   └── main.css
+│
+├── .vscode/
+├── data.json
+├── index.html
+├── main.js
+└── README.md
+```
 
-The designs are in JPG static format. Using JPGs will mean that you'll need to use your best judgment for styles such as `font-size`, `padding` and `margin`.
+## What I Learned
 
-If you would like the Figma design file to gain experience using professional tools and build more accurate projects faster, you can [subscribe as a PRO member](https://www.frontendmentor.io/pro).
+Working on this project helped me strengthen my understanding of frontend development, particularly:
 
-You will find all the required assets in the `/images` folder. The assets are already optimized.
+### DOM Manipulation and Dynamic Rendering
 
-There is also a `style-guide.md` file containing the information you'll need, such as color palette and fonts.
+- Creating reusable DOM elements with JavaScript.
+- Building activity cards dynamically from external JSON data.
+- Using `DocumentFragment` to assemble elements before inserting them into the document.
 
-## Using AI coding assistants
+### Asynchronous JavaScript
 
-We've included two files to help you if you're using AI coding assistants (like Claude, GitHub Copilot, Cursor, etc.) while working on this challenge:
+- Retrieving JSON data using the Fetch API.
+- Handling HTTP errors using `Response.ok`.
+- Managing asynchronous initialization with `async/await` and error handling.
 
-- `AGENTS.md` - Contains detailed instructions for AI assistants on how to help you with this challenge. It's tailored to this challenge's difficulty level, so the AI will provide guidance appropriate to your learning stage—offering more support for beginner challenges and encouraging more independence on advanced ones.
-- `CLAUDE.md` - A pointer file that directs Claude-based tools to the AGENTS.md instructions.
+### Event Handling and State Management
 
-**How to use them:** You don't need to do anything! These files are automatically detected by most AI coding tools. The AI will read them and adjust its behavior to be a better learning partner—guiding you toward solutions rather than just giving you the answers.
+- Using event delegation to handle timeframe selection.
+- Understanding the relationship between application state and the DOM.
+- Keeping the selected timeframe, visual button state, and displayed statistics synchronized.
 
-**Note:** These files are designed to help you *learn*, not to do the work for you. The AI is instructed to ask questions, give hints, and explain concepts rather than writing complete solutions.
+### Accessibility
 
-## Building your project
+- Using semantic HTML elements.
+- Grouping related controls with ARIA attributes.
+- Using `aria-pressed` to communicate toggle button states.
 
-Feel free to use any workflow that you feel comfortable with. Below is a suggested process, but do not feel like you need to follow these steps:
+### SCSS and Responsive Layouts
 
-1. Initialize your project as a public repository on [GitHub](https://github.com/). Creating a repo will make it easier to share your code with the community if you need help. If you're not sure how to do this, [have a read-through of this Try Git resource](https://try.github.io/).
-2. Configure your repository to publish your code to a web address. This will also be useful if you need some help during a challenge as you can share the URL for your project with your repo URL. There are a number of ways to do this, and we provide some recommendations below.
-3. Look through the designs to start planning out how you'll tackle the project. This step is crucial to help you think ahead for CSS classes to create reusable styles.
-4. Before adding any styles, structure your content with HTML. Writing your HTML first can help focus your attention on creating well-structured content.
-5. Write out the base styles for your project, including general content styles, such as `font-family` and `font-size`.
-6. Start adding styles to the top of the page and work down. Only move on to the next section once you're happy you've completed the area you're working on.
+- Organizing styles into partials.
+- Using Sass maps and variables to manage design tokens.
+- Building responsive layouts with CSS Grid and Flexbox.
+- Using `rem` units for typography.
 
-## Deploying your project
+## AI Collaboration
 
-As mentioned above, there are many ways to host your project for free. Our recommended hosts are:
+I used ChatGPT as a learning and development assistant throughout this project.
 
-- [GitHub Pages](https://pages.github.com/)
-- [Vercel](https://vercel.com/)
-- [Netlify](https://www.netlify.com/)
+My workflow focused on understanding concepts and making implementation decisions rather than blindly copying generated solutions.
 
-You can host your site using one of these solutions or any of our other trusted providers. [Read more about our recommended and trusted hosts](https://www.frontendmentor.io/guides/hosting-your-solution).
+I used AI assistance for:
 
-## Create a custom `README.md`
+- Understanding JavaScript and DOM concepts.
+- Debugging implementation issues.
+- Reviewing code quality and discussing design decisions.
+- Understanding accessibility practices.
+- Improving Git commit messages and development workflow.
 
-We strongly recommend overwriting this `README.md` with a custom one. We've provided a template inside the [`README-template.md`](./README-template.md) file in this starter code.
+The implementation and coding decisions were carried out through my own work, with AI used as a supporting learning and review tool.
 
-The template provides a guide for what to add. A custom `README` will help you explain your project and reflect on your learnings. Please feel free to edit our template as much as you like.
+## Future Improvements
 
-Once you've added your information to the template, delete this file and rename the `README-template.md` file to `README.md`. That will make it show up as your repository's README file.
+- Add automated tests for JavaScript functionality.
+- Improve error handling and user feedback when activity data cannot be loaded.
+- Continue refining accessibility and keyboard interaction.
+- Review and improve code maintainability as the project evolves.
 
-## Submitting your solution
+## Author
 
-Submit your solution on the platform for the rest of the community to see. Follow our ["Complete guide to submitting solutions"](https://www.frontendmentor.io/guides/how-to-submit-solutions) for tips on how to do this.
-
-Remember, if you're looking for feedback on your solution, be sure to ask questions when submitting it. The more specific and detailed you are with your questions, the higher the chance you'll get valuable feedback from the community.
-
-## Sharing your solution
-
-There are multiple places you can share your solution:
-
-1. Share your solution page in the **#finished-projects** channel of the [community](https://www.frontendmentor.io/community). 
-2. Share on [X (formerly Twitter)](https://x.com/frontendmentor) and mention **@frontendmentor**, including the repo and live URLs in your post. We'd love to take a look at what you've built and help share it around.
-3. Share your solution on [LinkedIn](https://www.linkedin.com/company/frontend-mentor/).
-4. Blog about your experience building your project. Writing about your workflow, technical choices, and talking through your code is a brilliant way to reinforce what you've learned. Great platforms to write on are [dev.to](https://dev.to/), [Hashnode](https://hashnode.com/), and [CodeNewbie](https://community.codenewbie.org/).
-
-We provide templates to help you share your solution once you've submitted it on the platform. Please do edit them and include specific questions when you're looking for feedback.
-
-The more specific you are with your questions the more likely it is that another member of the community will give you feedback.
-
-## Got feedback for us?
-
-We love receiving feedback! We're always looking to improve our challenges and our platform. So if you have anything you'd like to mention, please email hi[at]frontendmentor[dot]io.
-
-This challenge is completely free. Please share it with anyone who will find it useful for practice.
-
-**Have fun building!** 🚀
-# time-tracking-dashboard
+- **GitHub:** [@promahmoud219](https://github.com/promahmoud219)
+- **Frontend Mentor:** [Add your Frontend Mentor profile]
