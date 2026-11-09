@@ -142,6 +142,7 @@ const filterTime = document.querySelector(".filter-time");
 filterTime.addEventListener("click", (event) => {
     
     let button = event.target.closest("[data-period]");
+    if(!button) return;
     selectedTimeframe = button.dataset.period;
 
     let activeButton = document.querySelector(".filter-time__button--active");

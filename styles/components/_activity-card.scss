@@ -5,7 +5,7 @@
 
 .activity-card{
  
-    background: var(--color-blue-300);
+    // background: var(--color-blue-300);
     border-radius: var(--spacing-200);
     isolation: isolate;
     position: relative;
@@ -40,12 +40,20 @@
         display: flex;
         flex-direction: column;
         gap: var(--spacing-100);
-        
+    
+    
+        &:hover{
+            background: var(--color-navy-800);
+            cursor: pointer;
+        }
+
+
         @media (min-width: $breakpoint-tablet) {
             gap: var(--spacing-200);
         }
     }
-
+    
+    
     &__title-and-options{
         display: flex;    
         justify-content: space-between;
