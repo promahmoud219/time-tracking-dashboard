@@ -148,7 +148,7 @@ filterTime.addEventListener("click", (event) => {
     let activeButton = document.querySelector(".filter-time__button--active");
 
     activeButton.classList.remove("filter-time__button--active");
-    activeButton.removeAttribute("aria-pressed");
+    activeButton.setAttribute("aria-pressed", "false");
     
     button.classList.add("filter-time__button--active"); 
     button.setAttribute("aria-pressed", "true");
