@@ -83,7 +83,6 @@ function createActivityCard(activity) {
     
     options.classList.add("activity-card__options");
     options.type = "button";
-    options.setAttribute("aria-label", `More options for ${activity.title}`);
 
     time.classList.add("activity-card__time");
     currentTime.classList.add("activity-card__current-time");

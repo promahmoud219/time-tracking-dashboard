@@ -146,7 +146,7 @@ FILE: ./index.html
 
         <div class="profile__info">
 
-          <img src="./images/image-jeremy.png" alt="profile image of Jeremy" class="profile__avatar">
+          <img src="./images/image-jeremy.png" alt="Jeremy Robson" class="profile__avatar">
 
           <div class="profile__title">
             <p class="profile__label">Report for</p>
@@ -232,7 +232,7 @@ async function getAllActivities() {
     if(!response.ok)
         throw new Error(`Failed to fetch activities: ${response.status}`);
 
-    return await response.json();
+    return response.json();
 }
  
 
@@ -284,7 +284,6 @@ function createActivityCard(activity) {
     
     options.classList.add("activity-card__options");
     options.type = "button";
-    options.setAttribute("aria-label", `More options for ${activity.title}`);
 
     time.classList.add("activity-card__time");
     currentTime.classList.add("activity-card__current-time");
@@ -361,7 +360,7 @@ filterTime.addEventListener("click", (event) => {
 })
 
 
-function filterTimeFunction(activity, selectedTimeframe){
+function updateActivityCardTimeframe(activity, selectedTimeframe){
 
     const activityCard = document.querySelector(`.activity-card[data-activity="${activity.title}"]`);
 
